@@ -345,3 +345,42 @@ cmevla の作り方は「ロジバンの音素配列から cmevla を作る」�
 ※ [「larnorigami」のままでは最初の５字が gimvla となって「larno ri ga mi」等のようにばらける](https://ja.wikibooks.org/wiki/%E3%83%AD%E3%82%B8%E3%83%90%E3%83%B3/%E5%BD%A2%E6%85%8B%E8%AB%96#fu'ivla%20%E7%B3%BB)ので、「larnxorigami」のように、外来語部分が母音で始まる場合はこれを子音で始まるように変えないといけないみたいなのですが、
 **だったらどうして「[banjupunu](http://misonikomilojban.blogspot.com/2013/10/iso.html)」は「banju pu nu」に分解されないんですか？**
 私にはわかりませんので、今のところは無視します。
+
+## ロジバンの音素配列から四型フヒブラを作る
+
+※正直、四型フヒブラ分からないので、やべーこと書いてるかもしれません。
+特に問題がない場合は教えてください。
+逆に問題がある場合は教えてください。
+お願いします。
+
+1. 音素配列の語末が子音であれば i を語末に追加します。
+
+上から順に試して fu'ivla になれば完成です。
+
+1. 2番目の母音を消す
+2. 語頭にsをつける
+3. 語頭にzをつける
+4. 語頭にdをつける
+5. 最初の子音の後ろに r, l, n, rl, lr, rln （優先度順）をつける
+6. 2番目の子音の直前に r, l, n, rl, lr, rln （優先度順）を入れる
+7. 2番目の子音がない場合は2音節目に rli, lri, rlni （優先度順）を追加する
+
+### ロジバンの音素配列から四型フヒブラの変換例
+
+- igloo（イーグル） → *iglu* → **iglu** （存在が四型フヒブラなのでそのまま完成）
+- ぽんぽんぺいん → *pompompein* → **pompompeini** （存在が四型フヒブラなのでそのまま完成）
+- スパゲッティ → *spageti* → **spageti** （存在が四型フヒブラなのでそのまま完成）
+- アニメ → *anime* → **anme** （1で完成）
+- 浦島効果 → *uracimako'uka* → **urcimako'uka** （1で完成）
+- 腹切り → *xarakiri* → **xarkiri** （1で完成）
+- 唐揚げ → *kara'age* → **skara'age** （2で完成）
+- 牛丼 → *giiudon* → **zgiiudoni** （3で完成）
+- じゃがりこ → *jagariko* -> **djagariko** （4で完成）
+- ハヤシライス → *xaiaciraisu* → **xraiaciraisu** （5で完成）
+- 寿司 → *suci* → **srluci** （5で完成）
+- 鬼 → *oni* → **onri** （5で完成）
+- 忍者 → *ninja* → **nirnja** （6で完成）
+- 蘇 → *so* → **sorlni** （7で完成）
+- 大鬼 → *o'o'oni* → **orli'o'oni** （7で完成）
+
+※日本語多いので日本語以外の例があればください。
