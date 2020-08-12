@@ -3,6 +3,13 @@
 skytomo式cmevla（skaitomon zei cmevla ciste）は一定の方法で単語をcmevlaにするシステムです。
 これは jbovlaste や Wikipedia における検索などで役に立ちます。
 
+## 大前提
+
+1. 基本的にIPAを基準に変換します。
+2. 言語ごとに簡易的なルールがある場合はそちらを優先します。
+3. 語末を子音にしたいときは s を語末に追加します。
+4. 語末を母音にしたいときは i を語末に追加します。
+
 ## IPA から cmevla を作る
 
 1. 対象のものに対してすでに独自の cmevla が割り振られている場合はそれを優先します。
@@ -21,15 +28,11 @@ skytomo式cmevla（skaitomon zei cmevla ciste）は一定の方法で単語をcm
 3. 以下の方法にしたがってロジバンの音素配列をcmevlaに変換します。
    1. 語末が子音であればそれが cmevla になります。
          - 【例】 Albert Einstein [ˈalbɛʁt ˈʔaɪnʃtaɪn] → *albert ainctain* → **albert ainctain**
-   2. 語末が母音であれば以下の方法にしたがって cmevla を作ります。
-      1. 母音のみで構成されていれば最後に n を追加します。
-         - 【例】 キズナアイ [kʲizɨᵝna̠ a̠i] → *kiiizuna ai* → **kiiizun ain**
-      2. CV（子音 + 母音）の1音節で構成されていれば最後に n を追加します。
-         - 【例】 李 [lì] → *li* → **lin**
-      3. 語末が3文字以上のa, e, i, o, u, 'で構成されていれば最後に n を追加します。
-         - 【例】 東京 [to̞ːkʲo̞ː] → *tokiio* → **tokiion**
-      4. それ以外なら、語末の母音を脱落させます。
-         - 【例】 Esperanto [es.peˈran.to] → *esperanto* → **esperant**
+   2. 語末が母音であれば語末を子音にしたいときは s を語末に追加して cmevla を作ります。
+         - 【例】 キズナアイ [kʲizɨᵝna̠ a̠i] → *kiiizuna ai* → **kiiizunas ais**
+         - 【例】 李 [lì] → *li* → **lis**
+         - 【例】 東京 [to̞ːkʲo̞ː] → *tokiio* → **tokiios**
+         - 【例】 Esperanto [es.peˈran.to] → *esperantos* → **esperantos**
 
 <table>
 	<tbody>
