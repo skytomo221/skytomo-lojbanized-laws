@@ -1,7 +1,8 @@
-# skytomo式cmevla
+# skytomo式ロジバン化
 
-skytomo式cmevla（skaitomon zei cmevla ciste）は一定の方法で単語をcmevlaにするシステムです。
-これは jbovlaste や Wikipedia における検索などで役に立ちます。
+skytomo式ロジバン化（skaitomon zei jboga'i tadji）では一定の方法で非ロジバンの単語をロジバン化することができます。
+このルールに従って大量にロジバン化することができます。
+また、これは jbovlaste や Wikipedia における検索などで役に立ちます。
 
 ## 大前提
 
@@ -24,7 +25,6 @@ skytomo式cmevla（skaitomon zei cmevla ciste）は一定の方法で単語をcm
       3. ç + 母音であれば、「xii + 母音」と変換します。
       4. 間に y を入れることによって子音の禁則配列を回避します。
       5. 間に ' を入れることによって母音の禁則配列を回避します。
-   - 【例】 Albert Einstein [ˈalbɛʁt ˈʔaɪnʃtaɪn] → *albert ainctain* → **albert ainctain**
 3. 以下の方法にしたがってロジバンの音素配列をcmevlaに変換します。
    1. 語末が子音であればそれが cmevla になります。
          - 【例】 Albert Einstein [ˈalbɛʁt ˈʔaɪnʃtaɪn] → *albert ainctain* → **albert ainctain**
