@@ -4,35 +4,27 @@ skytomo式ロジバン化（skaitomon zei jboga'i tadji）では一定の方法�
 このルールに従って大量にロジバン化することができます。
 また、これは jbovlaste や Wikipedia における検索などで役に立ちます。
 
-## 大前提
+## 大まかな流れ
 
-1. 基本的にIPAを基準に変換します。
+1. すでに独自の cmevla が割り振られている場合はそれを優先します。
 2. 言語ごとに簡易的なルールがある場合はそちらを優先します。
-3. 語末を子音にしたいときは s を語末に追加します。
-4. 語末を母音にしたいときは i を語末に追加します。
+3. IPAからロジバンの音素配列を作ります。
+4. ロジバンの音素配列から、cmevlaまたはfu'ivlaを作ります。  
+5. 語末を子音にしたいときは s を語末に追加します。
+6. 語末を母音にしたいときは i を語末に追加します。
 
-## IPA から cmevla を作る
+1 の例として、guskant, kocon, skaitomon などがあります。
 
-1. 対象のものに対してすでに独自の cmevla が割り振られている場合はそれを優先します。
-   - 【例】 guskant
-   - 【例】 kocon
-   - 【例】 skaitomon
-2. 以下の方法にしたがってIPAをロジバンの音素配列に変換します。
-   1. ロジバンに存在する発音はそのまま音素配列になります。
-   2. 下にある表にしたがって音素配列に変換します。ただし、以下の例外があります。
-      1. ɲ + 母音であれば、「nii + 母音」と変換します。
-      2. ŋ + 子音であれば、「n」と変換します。
-      3. ç + 母音であれば、「xii + 母音」と変換します。
-      4. 間に y を入れることによって子音の禁則配列を回避します。
-      5. 間に ' を入れることによって母音の禁則配列を回避します。
-3. 以下の方法にしたがってロジバンの音素配列をcmevlaに変換します。
-   1. 語末が子音であればそれが cmevla になります。
-         - 【例】 Albert Einstein [ˈalbɛʁt ˈʔaɪnʃtaɪn] → *albert ainctain* → **albert ainctain**
-   2. 語末が母音であれば語末を子音にしたいときは s を語末に追加して cmevla を作ります。
-         - 【例】 キズナアイ [kʲizɨᵝna̠ a̠i] → *kiiizuna ai* → **kiiizunas ais**
-         - 【例】 李 [lì] → *li* → **lis**
-         - 【例】 東京 [to̞ːkʲo̞ː] → *tokiio* → **tokiios**
-         - 【例】 Esperanto [es.peˈran.to] → *esperantos* → **esperantos**
+## IPA からロジバンの音素配列を作る
+
+以下の方法にしたがってIPAをロジバンの音素配列に変換します。
+
+1. 下にある表にしたがって音素配列に変換します。ただし、以下の例外があります。
+    1. ɲ + 母音であれば、「nii + 母音」と変換します。
+    2. ŋ + 子音であれば、「n」と変換します。
+    3. ç + 母音であれば、「xii + 母音」と変換します。
+    4. 間に y を入れることによって子音の禁則配列を回避します。
+    5. 間に ' を入れることによって母音の禁則配列を回避します。
 
 <table>
 	<tbody>
@@ -74,11 +66,9 @@ skytomo式ロジバン化（skaitomon zei jboga'i tadji）では一定の方法�
 		<tr>
 			<td align="center"><b>p b</b></td>
 			<td align="center"><b></b></td>
-			<td  align="center" colspan="3"><b>t d</b></td>
-			<td align="center"><b>t d</b></td>
+			<td  align="center" colspan="4"><b>t d</b></td>
 			<td align="center"><b>ki gi</b></td>
-			<td align="center"><b>k g</b></td>
-			<td align="center"><b>k g</b></td>
+			<td align="center" colspan="2"><b>k g</b></td>
 			<td align="center">-</td>
 			<td align="center">-</td>
 			<td align="center">-</td>
@@ -290,6 +280,57 @@ skytomo式ロジバン化（skaitomon zei jboga'i tadji）では一定の方法�
 |  u ɯ ʉ ʊ̈ ɯ̽ ʊ  |  **u**   |
 |       ə       |  **y**   |
 
-## 例
+### IPA からロジバンの音素配列の変換例
 
-- [日本の都道府県の例](example/Prefectures%20of%20Japan.tsv)
+- Python → [ˈpaɪθɑːn] → *paisan*
+- spaghetti （スパゲッティ） → [spaˈɡetti] → *spageti*
+- 東京 → [to̞ːkʲo̞ː] → *tokiio*
+
+## ロジバンの音素配列から cmevla を作る
+
+1. 語末が子音であればそれが cmevla になります。
+2. 語末が母音であれば s を語末に追加して cmevla を作ります。
+
+### ロジバンの音素配列から cmevla の変換例
+
+- Albert Einstein → [ˈalbɛʁt ˈʔaɪnʃtaɪn] → *albert ainctain* → 
+- キズナアイ → [kʲizɨᵝna̠ a̠i] → *kiiizuna ai* → **kiiizunas ais**
+- 李 → [lì] → *li* → **lis**
+- 東京 → [to̞ːkʲo̞ː] → *tokiio* → **tokiios**
+- Esperanto → [es.peˈran.to] → *esperantos* → **esperantos**
+
+## ロジバンの音素配列から一型フヒブラを作る
+
+1. {me la'o zoi .ロジバンの音素配列. zoi} とします。
+
+### ロジバンの音素配列から一型フヒブラの変換例
+
+- spaghetti → [spaˈɡetti] → *spageti* → me la'o zoi .*spageti*. zoi
+
+## ロジバンの音素配列から二型フヒブラを作る
+
+1. {me la CMENE} とします。
+
+cmevla の作り方は「ロジバンの音素配列から cmevla を作る」方法とまったく同じです。
+
+### ロジバンの音素配列から二型フヒブラの変換例
+
+- spaghetti → [spaˈɡetti] → *spageti* → me la .spagetis.
+
+## ロジバンの音素配列から三型フヒブラを作る
+
+1. 音素配列の語末が子音であれば i を語末に追加します。
+2. 4文字ラフシを以下の表に従って選びます。
+3. 4文字ラフシと音素配列の間に必要に応じて r, n, l （優先度順）を挟みます。
+4. 語頭が母音であれば先頭の4文字ラフシによって条件が変わります。
+   1. 先頭の4文字ラフシの語末が子音になるならば何もしません。
+   2. 先頭の4文字ラフシの語末が必ず母音ならば音素配列の語頭に ' を追加します。
+
+### ロジバンの音素配列から三型フヒブラの変換例
+
+- spaghetti → [spaˈɡetti] → *spageti* → cidja + spageti → dja + r + spageti → djarspageti
+- origami → *origami* → larcu + origami → lar + n + origami → larnorigami
+
+※ [「larnorigami」のままでは最初の５字が gimvla となって「larno ri ga mi」等のようにばらける](https://ja.wikibooks.org/wiki/%E3%83%AD%E3%82%B8%E3%83%90%E3%83%B3/%E5%BD%A2%E6%85%8B%E8%AB%96#fu'ivla%20%E7%B3%BB)ので、「larnxorigami」のように、外来語部分が母音で始まる場合はこれを子音で始まるように変えないといけないみたいなのですが、
+**だったらどうして「[banjupunu](http://misonikomilojban.blogspot.com/2013/10/iso.html)」は「banju pu nu」に分解されないんですか？**
+私にはわかりませんので、今のところは無視します。
