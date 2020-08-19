@@ -1,32 +1,32 @@
-# skytomo式ロジバン化
+# skytomo lojbanized law
 
-skytomo式ロジバン化（skaitomon zei jboga'i tadji）では一定の方法で非ロジバンの単語をロジバン化することができます。
-このルールに従って大量にロジバン化することができます。
-また、これは jbovlaste や Wikipedia における検索などで役に立ちます。
+skytomo lojbanized law (skaitomon zei jboga'i tadji) can lojbanize non-lojbanic word by constant methods
+Following this rules, you can lojbanize a lot of.
+And, this is useful for serching on jbovlaste and Wikipedia.
 
-## 大まかな流れ
+## Big wave
 
-1. すでに独自の cmevla が割り振られている場合はそれを優先します。
-2. 言語ごとに簡易的なルールがある場合はそちらを優先します。
-3. IPAからロジバンの音素配列を作ります。
-4. ロジバンの音素配列から、cmevlaまたはfu'ivlaを作ります。  
-5. 語末を子音にしたいときは s を語末に追加します。
-6. 語末を母音にしたいときは i を語末に追加します。
+1. Already, if original cmevla is assained, it prioritizes.
+2. If each of language has simple rules, it prioritizes.
+3. Make from IPA to lojbanized sounds.
+4. From lojbanized sounds, make cmevla or fu'ivla.
+5. When you want to be consonant at end of word, add s to end of word.
+6. When you want to be vowel at end of word, add i to end of word.
 
-1 の例として、guskant, kocon, skaitomon などがあります。
+For example of 1, there are guskant, kocon, skaitomon and etc.
 
-## IPA からロジバンの音素配列を作る
+## Make from IPA to lojbanized sounds
 
-以下の方法にしたがってIPAをロジバンの音素配列に変換します。
+Following by undering method, convert from IPA to lojbanized sounds.
 
-1. 下にある表にしたがって音素配列に変換します。ただし、以下の例外があります。
-    1. c + 母音であれば、「kii + 母音」と変換します。
-    2. ɟ + 母音であれば、「gii + 母音」と変換します。
-    3. ɲ + 母音であれば、「nii + 母音」と変換します。
-    4. ŋ + 子音であれば、「n」と変換します。
-    5. ç + 母音であれば、「xii + 母音」と変換します。
-    6. 間に y を入れることによって子音の禁則配列を回避します。
-    7. 間に ' を入れることによって母音の禁則配列を回避します。
+1. Following by undering table, convert sounds. But, there is occuring exception under:
+    1. If c + vowel, covert "kii + vowel."
+    2. If ɟ + vowel, covert "gii + vowel."
+    3. If ɲ + vowel, covert "nii + vowel."
+    4. If ŋ + consonant, covert "n."
+    5. If ç + vowel, convert "xii + vowel"
+    6. Between, insert y, avoid banned consonant arrays.
+    7. Between, insert ', avoid banned vowel arrays.
 
 <table>
 	<tbody>
@@ -290,45 +290,45 @@ skytomo式ロジバン化（skaitomon zei jboga'i tadji）では一定の方法�
 |  u ɯ ʉ ʊ̈ ɯ̽ ʊ  |  **u**   |
 |       ə       |  **y**   |
 
-### IPA からロジバンの音素配列の変換例
+### Examples for converting from IPA to lojbanized sounds
 
 - Python → [ˈpaɪθɑːn] → *paisan*
-- spaghetti （スパゲッティ） → [spaˈɡetti] → *spageti*
-- 東京 → [to̞ːkʲo̞ː] → *tokiio*
+- spaghetti → [spaˈɡetti] → *spageti*
+- 東京 (Tokyo) → [to̞ːkʲo̞ː] → *tokiio*
 
-## ロジバンの音素配列から cmevla を作る
+## Make from lojbanized sounds to cmevla
 
 1. 語末が子音であればそれが cmevla になります。
 2. 語末が母音であれば s を語末に追加して cmevla を作ります。
 
-### ロジバンの音素配列から cmevla の変換例
+### Examples for converting from lojbanized sounds to cmevla
 
 - Albert Einstein → [ˈalbɛʁt ˈʔaɪnʃtaɪn] → *albert ainctain* → **albert ainctain**
 - Esperanto → [es.peˈran.to] → *esperantos* → **esperantos**
-- キズナアイ → [kʲizɨᵝna̠ a̠i] → *kiiizuna ai* → **kiiizunas ais**
-- 李 → [lì] → *li* → **lis**
-- 東京 → [to̞ːkʲo̞ː] → *tokiio* → **tokiios**
+- キズナアイ (Kizuna Ai) → [kʲizɨᵝna̠ a̠i] → *kiiizuna ai* → **kiiizunas ais**
+- 李 (Li) → [lì] → *li* → **lis**
+- 東京 (Tokyo) → [to̞ːkʲo̞ː] → *tokiio* → **tokiios**
 - Twitter → [ˈtwɪ.tə(ɹ)] → *tuuityr* → **tuuityr**
 
-## ロジバンの音素配列から一型フヒブラを作る
+## Make from lojbanized sounds to stage 1 fu'ivla
 
-1. {me la'o zoi .ロジバンの音素配列. zoi} とします。
+1. It converts {me la'o zoi .lojbanized sounds. zoi}
 
-### ロジバンの音素配列から一型フヒブラの変換例
+### Examples for converting from lojbanized sounds to stage 1 fu'ivla
 
 - spaghetti → [spaˈɡetti] → *spageti* → me la'o zoi .*spageti*. zoi
 
-## ロジバンの音素配列から二型フヒブラを作る
+## Make from lojbanized sounds to stage 2 fu'ivla
 
-1. {me la CMENE} とします。
+1. It converts {me la CMENE}
 
-cmevla の作り方は「ロジバンの音素配列から cmevla を作る」方法とまったく同じです。
+How to make cmevla is same as how to make from lojbanized sounds to cmevla.
 
-### ロジバンの音素配列から二型フヒブラの変換例
+### Examples for converting from lojbanized sounds to stage 2 fu'ivla
 
 - spaghetti → [spaˈɡetti] → *spageti* → me la .spagetis.
 
-## ロジバンの音素配列から三型フヒブラを作る
+## Make from lojbanized sounds to stage 3 fu'ivla
 
 1. 音素配列の語末が子音であれば i を語末に追加します。
 2. 4文字ラフシを以下の表に従って選びます。
@@ -337,7 +337,7 @@ cmevla の作り方は「ロジバンの音素配列から cmevla を作る」�
    1. 先頭の4文字ラフシの語末が子音になるならば何もしません。
    2. 先頭の4文字ラフシの語末が必ず母音ならば音素配列の語頭に ' を追加します。
 
-### ロジバンの音素配列から三型フヒブラの変換例
+### Examples for converting from lojbanized sounds to stage 3 fu'ivla
 
 - spaghetti → [spaˈɡetti] → *spageti* → cidja + spageti → dja + r + spageti → **djarspageti**
 - origami → *origami* → larcu + origami → lar + n + origami → **larnorigami**
@@ -346,7 +346,7 @@ cmevla の作り方は「ロジバンの音素配列から cmevla を作る」�
 **だったらどうして「[banjupunu](http://misonikomilojban.blogspot.com/2013/10/iso.html)」は「banju pu nu」に分解されないんですか？**
 私にはわかりませんので、今のところは無視します。
 
-## ロジバンの音素配列から四型フヒブラを作る
+## Make from lojbanized sounds to stage 4 fu'ivla
 
 ※正直、四型フヒブラ分からないので、やべーこと書いてるかもしれません。
 特に問題がない場合は教えてください。
@@ -363,22 +363,22 @@ cmevla の作り方は「ロジバンの音素配列から cmevla を作る」�
    6. 2番目の子音の直前に r, n, l, rn, nr, rl, nl, rnl （優先度順）を入れる
    7. 2番目の子音がない場合は2音節目に rni, nri, rli, nli, rnli （優先度順）を追加する
 
-### ロジバンの音素配列から四型フヒブラの変換例
+### Examples for converting from lojbanized sounds to stage 4 fu'ivla
 
-- igloo（イーグル） → *iglu* → **iglu** （存在が四型フヒブラなのでそのまま完成）
-- ぽんぽんぺいん → *pompompein* → **pompompeini** （存在が四型フヒブラなのでそのまま完成）
-- スパゲッティ → *spageti* → **spageti** （存在が四型フヒブラなのでそのまま完成）
-- アニメ → *anime* → **anme** （1で完成）
-- ウガンダ → *uganda* → **ugnda** （1で完成）
-- 腹切り → *xarakiri* → **xarkiri** （1で完成）
-- 唐揚げ → *kara'age* → **skara'age** （2で完成）
-- 牛丼 → *giiudon* → **zgiiudoni** （3で完成）
-- じゃがりこ → *jagariko* -> **djagariko** （4で完成）
-- ハヤシライス → *xaiaciraisu* → **xraiaciraisu** （5で完成）
-- 鬼 → *oni* → **onri** （5で完成）
-- 寿司 → *suci* → **surnci** （6で完成）
-- 忍者 → *ninja* → **nirnja** （6で完成）
-- 蘇 → *so* → **sorlni** （7で完成）
-- 大鬼 → *o'o'oni* → **orli'o'oni** （7で完成）
+- igloo → *iglu* → **iglu** （存在が四型フヒブラなのでそのまま完成）
+- pompompain → *pompompein* → **pompompeini** （存在が四型フヒブラなのでそのまま完成）
+- spaghetti → *spageti* → **spageti** （存在が四型フヒブラなのでそのまま完成）
+- anime → *anime* → **anme** （1で完成）
+- Uganda → *uganda* → **ugnda** （1で完成）
+- harakiri → *xarakiri* → **xarkiri** （1で完成）
+- karaage → *kara'age* → **skara'age** （2で完成）
+- gyudon → *giiudon* → **zgiiudoni** （3で完成）
+- jagariko (Japanese desert which is potato sticks) → *jagariko* -> **djagariko** （4で完成）
+- Hayashi rice (unspicy curry) → *xaiaciraisu* → **xraiaciraisu** （5で完成）
+- oni → *oni* → **onri** （5で完成）
+- sushi → *suci* → **surnci** （6で完成）
+- ninja → *ninja* → **nirnja** （6で完成）
+- oo (Japanese old milk cake) → *so* → **sorlni** （7で完成）
+- oooni (Big oni) → *o'o'oni* → **orli'o'oni** （7で完成）
 
 ※日本語多いので日本語以外の例があればください。
